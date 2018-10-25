@@ -15,7 +15,7 @@
 	along with Kayak.  If not, see <http://www.gnu.org/licenses/>.
 	
 --> 
-<NetworkDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://kayak.2codeornot2code.org/1.0" xsi:noNamespaceSchemaLocation="Definition.xsd">
+<NetworkDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://andy2003.2codeornot2code.org/1.0" xsi:noNamespaceSchemaLocation="Definition.xsd">
 	<Document name="The Homer" version="1.23" author="Herbert Powell" company="Powell Motors" date="1991-02-16">
 	A car designed by Homer J. Simpson that the average american consumer would want to buy.
 	The Homer has two bubble domes: one in the front and one for quarreling kids. 

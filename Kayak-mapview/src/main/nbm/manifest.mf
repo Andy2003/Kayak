@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-OpenIDE-Module-Localizing-Bundle: com/github/kayak/mapview/Bundle.properties
-OpenIDE-Module-Layer: com/github/kayak/mapview/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/github/andy2003/mapview/Bundle.properties
+OpenIDE-Module-Layer: com/github/andy2003/mapview/layer.xml
 OpenIDE-Module-Requires: org.openide.windows.WindowManager

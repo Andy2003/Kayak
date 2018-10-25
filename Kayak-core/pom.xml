@@ -3,11 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>Kayak</artifactId>
-        <groupId>com.github.kayak</groupId>
+        <groupId>com.github.andy2003</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.github.kayak</groupId>
     <artifactId>Kayak-core</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>nbm</packaging>
@@ -35,8 +34,8 @@
                 <extensions>true</extensions>
                 <configuration>
                     <publicPackages>
-                        <publicPackage>com.github.kayak.core</publicPackage>
-                        <publicPackage>com.github.kayak.core.description</publicPackage>
+                        <publicPackage>com.github.andy2003.core</publicPackage>
+                        <publicPackage>com.github.andy2003.core.description</publicPackage>
                     </publicPackages>
                 </configuration>
                 <version>3.13</version>

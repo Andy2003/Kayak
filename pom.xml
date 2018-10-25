@@ -15,10 +15,12 @@
  	You should have received a copy of the GNU Lesser General Public License
  	along with Kayak.  If not, see <http://www.gnu.org/licenses/>.
 
---><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.kayak</groupId>
+    <groupId>com.github.andy2003</groupId>
     <artifactId>Kayak</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -89,6 +91,21 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <modules>
@@ -98,8 +115,8 @@
         <module>Kayak-kcd</module>
         <module>Kayak-core</module>
         <module>Kayak-logging</module>
-    <module>Kayak-mapview</module>
-  </modules>
+        <module>Kayak-mapview</module>
+    </modules>
 
     <properties>
         <netbeans.version>RELEASE80</netbeans.version>
@@ -110,14 +127,14 @@
     <!-- More project info -->
     <name>Kayak</name>
     <description>
-    	Kayak aims to be a Java framework and GUI for CAN data handling. It will
-    	include an abstract data model for different CAN hard- and software
-    	solutions. SocketCAN and IP will be used as an abstraction layer above
-    	the hardware. Platform independence is a goal and therefore all logic
-    	will be implemented in Java. To run the framework on a Windows client
-    	a socketCAN over ethernet protocol will be implemented.
+        Kayak aims to be a Java framework and GUI for CAN data handling. It will
+        include an abstract data model for different CAN hard- and software
+        solutions. SocketCAN and IP will be used as an abstraction layer above
+        the hardware. Platform independence is a goal and therefore all logic
+        will be implemented in Java. To run the framework on a Windows client
+        a socketCAN over ethernet protocol will be implemented.
     </description>
-    <url>https://github.com/dschanoeh/Kayak/</url>
+    <url>https://github.com/Andy2003/Kayak/</url>
     <inceptionYear>2010</inceptionYear>
     <licenses>
         <license>
@@ -155,15 +172,57 @@
 
     <!-- Environment settings -->
     <issueManagement>
-        <url>https://github.com/dschanoeh/Kayak/issues</url>
+        <url>https://github.com/Andy2003/Kayak</url>
         <system>github</system>
     </issueManagement>
     <ciManagement/>
     <mailingLists/>
     <scm>
-        <connection>scm:git:git://github.com/dschanoeh/Kayak.git</connection>
-        <url>scm:git:git://github.com/dschanoeh/Kayak.git</url>
-        <developerConnection>scm:git:git://github.com/dschanoeh/Kayak.git</developerConnection>
+        <connection>scm:git:git://github.com/Andy2003/Kayak.git</connection>
+        <url>scm:git:git://github.com/Andy2003/Kayak.git</url>
+        <developerConnection>scm:git:git://github.com/Andy2003/Kayak.git</developerConnection>
     </scm>
-    <prerequisites/>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.8</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
