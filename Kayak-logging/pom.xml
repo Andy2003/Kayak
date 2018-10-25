@@ -4,11 +4,11 @@
     <parent>
         <artifactId>Kayak</artifactId>
         <groupId>com.github.andy2003</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
 
     <artifactId>Kayak-logging</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>nbm</packaging>
 
     <name>Kayak-logging NetBeans Module</name>
@@ -37,7 +37,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>Kayak-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <type>nbm</type>
         </dependency>
         <dependency>
